@@ -51,12 +51,17 @@ function Auth() {
 
         setTimeout(async () => {
           try {
-            await axios.post('http://localhost:3000', {
+            const { data } = await axios.post('http://localhost:5000', {
               email,
               password
             }, {
+              headers: {
+                'Content-Type': 'application/json'
+              },
               withCredentials: true
             });
+
+            Cookies.set('token', data.token);
             window.location.reload();
           } catch (error: unknown) {
             setLoading(false);
