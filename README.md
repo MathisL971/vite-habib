@@ -18,11 +18,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +31,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,7 +44,48 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
+
+# Python + Flask
+
+### Backend Setup
+
+1. **Install Python**: Ensure you have Python installed. You can download it from [python.org](https://www.python.org/downloads/).
+
+2. **Create a Virtual Environment**:
+
+   ```sh
+   python -m venv venv
+   ```
+
+   Activate the virtual environment:
+
+   - On Windows:
+     ```sh
+     venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```sh
+     source venv/bin/activate
+     ```
+
+3. **Install Dependencies**:
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. **Launch the Server**:
+
+   ```sh
+   python index.py
+   ```
+
+5. **Additional Resources**:
+   - [Flask Documentation](https://flask.palletsprojects.com/)
+   - [Python Documentation](https://docs.python.org/3/)
+
+This setup will get you started with a basic Flask application. You can expand it by adding more routes, templates, and database integrations as needed.
